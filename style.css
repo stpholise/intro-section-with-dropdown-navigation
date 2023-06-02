@@ -1,0 +1,303 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+:root{
+--Almost-White: hsl(0, 0%, 98%);
+--Medium-Gray: hsl(0, 0%, 41%);
+--Almost-Black: hsl(0, 0%, 8%);
+
+}
+
+body{
+    font-family:'Epilogue','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight:500;
+    width:100vw;
+    height:100vh;
+    padding:1rem;
+    font-size:18px;
+    color:var(--Medium-Gray);
+}
+a{
+    color:inherit;
+    text-decoration:none;
+}
+li{
+    list-style:none;
+    position:relative;
+}
+/* HEADER*/
+/* ----------------- */
+.header{
+    width:100%;
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    gap:5rem;
+    padding:0 1rem;
+    font-size:15px;
+}
+.header .menu-btn{
+    display:none
+}
+
+/* HEADER NAVIGATIONS */
+/* =============== */
+.header .nav-login{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+}
+.header .main-nav .main-menu{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:3rem;
+    position:relative;
+}
+/* ALL LINK HOVER STATE */
+.header .main-nav ul a:hover, a:hover{
+    color:var(--Almost-Black);
+}
+
+/* HIDDEN MENU */
+/* ================ */
+.header .hide{
+    display:none;
+    position:absolute;
+    background-color:var(--Almost-White);
+    min-width:100px;
+    width:max-content;
+    padding:1rem;
+    line-height:2;
+    border-radius:1rem;
+    box-shadow:1px 1px 8px var(--Medium-Gray);
+    text-transform:capitalize;
+    z-index:50;
+}
+.features-menu img{
+    padding-right:1rem;
+}
+.features-menu.show{
+    top:2rem;
+    left:-4rem;
+    display:block;
+    z-index: 20;
+
+}
+.company-menu.show {
+    display:block;
+    top:2rem;
+}
+
+/* REGISTRATION */
+/* ------------- */
+.register{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:2rem;
+}
+.register .signin, .lt .signin{
+    border:1px solid var(--Medium-Gray);
+    border-radius:1rem;
+    padding:0.7rem 1.5rem;
+}
+.register .signin:hover, .lt .signin:hover{
+    color:var(--Almost-Black);
+    border:1px solid var(--Almost-Black);
+    background:var(--Almost-White);
+}
+
+/* MAIN PAGE  */
+.main{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    padding:10rem;
+    gap:5rem;
+}
+/* LEFT SIDE  */
+/* ------------------ */
+.main .lt{
+    width:50%;
+}
+.lt h1{
+    font-size:4.5rem;
+    color:var(--Almost-Black);
+    margin:3rem 0;
+}
+p{
+    margin:1rem 0 3rem;
+}
+.lt .signin{
+margin: 2rem 0;
+color:#fff;
+background:var(--Almost-Black);
+}
+
+
+/* RIGHT SIDE */
+/* --------------- */
+.main .rt {
+    width:50%;
+    height:auto;
+    padding:1rem;
+}
+.main .rt img{
+    width:100%;
+}
+.main .rt img.dscktop-img{
+    display:block;
+ }
+ 
+.main .rt img.mobile-img{
+   display:none;
+}
+
+/* FOOTER */
+/* ------------------- */
+footer{
+    margin-top:5rem;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(100px, 1fr));
+    gap:1rem;
+}
+
+
+@media(max-width:800px){
+    .header{
+        width:100%;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        gap:5rem;
+        padding:0 1rem;
+        font-size:15px;
+    }
+    .header .nav-login{
+        
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        top:0;
+        bottom:0;
+        right:0;
+        width:50%;
+        background:var(--Almost-White);
+        opacity:960%;
+        justify-content:flex-start;
+        align-items:center;
+        padding:5rem 1rem;
+    }
+    .header .nav-login.show{
+        display:block;
+    }
+    .header .main-nav .main-menu{
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:1rem;
+        position:relative;
+    }
+    .header .menu-btn{
+        display:block;
+        z-index:50;
+   
+    }
+
+/* HIDDEN MENU */
+/* ================ */
+.header .hide{
+    display:none;
+    position:relative;
+    width:100%;
+    padding:1rem;
+    line-height:2;
+    border-radius:none;
+    box-shadow:none;
+    text-transform:capitalize;
+    z-index:60;
+}
+
+.features-menu.show{
+    top:0;
+    left:1rem;
+    display:block;
+    z-index: 20;
+
+}
+.company-menu.show {
+    display:block;
+    top:0;
+    left:1rem;
+    z-index: 50;
+}
+
+/* REGISTRATION */
+/* ------------- */
+.register{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:2rem;
+    
+}
+.register .signin, .lt .signin{
+    border:1px solid var(--Medium-Gray);
+    border-radius:1rem;
+    padding:0.7rem 1.5rem;
+}
+
+
+/* MAIN PAGE  */
+/* ==================== */
+    .main{
+        display:flex;
+        flex-direction:column-reverse;
+        width:100%;
+        justify-content:center;
+        align-items:center;
+        height:auto;
+        padding:1rem;
+        gap:1rem;
+        text-align: center;
+    }
+
+    .main .rt {
+        width:100%;
+        height:auto;
+        padding:0;
+    
+     }
+       
+        
+     .main .rt img.dscktop-img{
+        display:none;
+     }
+        
+    .main .rt img.mobile-img{
+        display:block;
+    }
+
+/* LEFT SIDE  */
+/* ------------------ */
+    .main .lt{
+         width:100%;
+    }
+    .lt h1{
+        font-size:2.5rem;
+        color:var(--Almost-Black);
+        margin:1rem 0;
+    }
+
+
+}
